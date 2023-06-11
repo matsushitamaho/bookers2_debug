@@ -1,6 +1,6 @@
 <h1>User info</h1>
-<div>
-  <%= image_tag book.user.get_profile_image(50,50) %>
+  <table>
+    <%= image_tag user.profile_image,size:'100x100' %>
   <tr>
     <td>name</td>
     <td><%= user.name %></td>
@@ -9,5 +9,8 @@
     <td>introduction</td>
     <td><%= user.introduction %></td>
   </tr>
+  </table>
   
-</div>
+  <%= link_to edit_user_path(user.id), class: "btn btn-block btn-outline-secondary p-0 mt-3" do %>
+  <i class="fas fa-user-cog"></i>
+<% end %>
